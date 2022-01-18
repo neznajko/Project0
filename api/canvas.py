@@ -10,7 +10,6 @@ from flask import ( Flask,
                     request,
                     send_file,
                   )
-import os
 ################################################################
 mnist_size   = 28
 canvas_size  = mnist_size*10
@@ -24,7 +23,7 @@ app = Flask( __name__, static_folder="../build", static_url_path='/')
 @app.route( "/")
 def index():
     return app.send_static_file( "index.html")
-
+################################################################
 @app.route( "/api/submit", methods=[ 'GET', 'POST'])
 def submit():
     data = request.json
@@ -113,7 +112,6 @@ def get_dist2( u, v):
     ''' Euclidian squared '''
     return np.sum( np.square( u - v))
 ################################################################
-# log: - submitting empty image                               []
-# - save png file to /tmp
+# log:
 ################################################################
 ####                                                        ####
