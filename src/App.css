@@ -60,7 +60,7 @@
 }
 body {
     background-color: var(--bg2);
-    margin-bottom: 80px;
+/*    margin-bottom: 80px;*/
 }
 canvas {
     background-color: #ffffff;
@@ -98,6 +98,7 @@ button:hover {
     width: 100%;
     text-align: center;
     padding-top: 20px;
+    margin-bottom: 20px;
 }
 .inner {
     display: inline-block;
@@ -108,7 +109,7 @@ button:hover {
   display: flex;
   background-color: var(--bg2);
   height: 50px;
-  width: 580px;
+  width: 600px;
   margin: auto;
 }
 .BAR {
@@ -123,6 +124,9 @@ button:hover {
 }
 .App {
     color: (--fg1);
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 .navbar {
     font-family: var(--bs-font-monospace);
@@ -155,10 +159,11 @@ button:hover {
     white-space: nowrap;
 }
 .footer {
-    position: fixed;
+/*    position: fixed;
     left: 0;
     bottom: 0;
-    width: 100%;
+    width: 100%;*/
+    margin-top: auto;
     background-color: hsl(240,50%,20%);
     color: hsl(200,60%,70%);
     text-align: center;

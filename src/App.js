@@ -23,6 +23,25 @@ function randomHSL() { // Hue Saturation Lightness
     const fgr = new Color( rnd( 0, 360), rnd( 0, 100), val);
     return [ bgr, fgr];
 }
+function randomFont() {
+    const font_list = [
+        "serif",
+        "sans-serif",
+        "monospace",
+        "cursive",
+        "fantasy",
+        "system-ui",
+        "ui-serif",
+        "ui-sans-serif",
+        "ui-monospace",
+        "ui-rounded",
+        "emoji",
+        "math",
+        "fangsong",
+    ];
+    const j = rnd( 0, font_list.length - 1);
+    return font_list[ j];
+}
 //////////////////////////////////////////////////////// 
 class Bar extends React.Component {
     constructor( props) {
@@ -31,7 +50,8 @@ class Bar extends React.Component {
         this.state = {
             bgr: bgr.str(),
             fgr: fgr.str(),
-            wid: `${rnd( 20, 50)}px`,
+            wid: `${rnd( 20, 60)}px`,
+            font: randomFont(),
         };
     }
     render() {
@@ -40,10 +60,11 @@ class Bar extends React.Component {
                     backgroundColor: this.state.bgr,
                     color: this.state.fgr,
                     width: this.state.wid,
+                    fontFamily: this.state.font,
                 }}>{this.props.char}</div>);
     }
     componentDidMount() {
-        const dt = rnd( 10, 30)*1000;
+        const dt = rnd( 10, 100)*1000;
         this.timerID = setInterval( () => this.tick(), dt);
     }
     componentWillUnmount() {
@@ -54,7 +75,8 @@ class Bar extends React.Component {
         this.setState({ 
             bgr: bgr.str(),
             fgr: fgr.str(),
-            wid: this.state.wid
+            wid: this.state.wid,
+            font: randomFont(),
         });
     }
 }
