@@ -195,7 +195,7 @@ class Canvas extends React.Component {
                                                  this.props.size);
         const data = imageData.data;
         let xhr = new XMLHttpRequest();
-        const uri = window.location.origin + "/submit";
+        const uri = window.location.origin + "/api/submit";
         console.log( uri);
         xhr.open( "POST", uri);
         xhr.setRequestHeader( "Content-Type", 

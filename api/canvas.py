@@ -19,9 +19,13 @@ mnist_labels = np.load( 'mnist/labels.npy')
 ################################################################
 # This is a central object, which will serve as a central object
 # __name__ will resolve to canvas I guess.
-app = Flask( __name__)
+app = Flask( __name__, static_folder="../build", static_url_path='/')
 ################################################################
-@app.route( "/submit", methods=[ 'GET', 'POST'])
+@app.route( "/")
+def index():
+    return app.send_static_file( "index.html")
+
+@app.route( "/api/submit", methods=[ 'GET', 'POST'])
 def submit():
     data = request.json
     a = np.array( data)
