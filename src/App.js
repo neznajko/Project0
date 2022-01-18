@@ -1,6 +1,7 @@
 ////////////////////////////////////////////////////////////////
 import React from "react";
 import './App.css';
+import logo from './GitHub-Mark-Light-64px.png';
 ////////////////////////////////////////////////////////////////
 function rnd( min, max) { // [ min, max]
     return min + Math.floor( Math.random()*( max - min + 1));
@@ -197,18 +198,18 @@ class Canvas extends React.Component {
     render() {
         return(
             <div id="Canvas-Street">
-                <div>
+                <div id="left">
                     <canvas ref={this.canvas}
                             width={this.props.size} 
                             height={this.props.size}
                             onMouseMove={this.handleMouseMove}
                             onMouseDown={this.handleMouseDown} />
-                <div>
-                <button onClick={this.clearCanvas}>Clear</button>
-                <button onClick={this.getPixels}>Submit</button>
+                    <div>
+                        <button onClick={this.clearCanvas}>Clear</button>
+                        <button onClick={this.getPixels}>Submit</button>
+                    </div>
                 </div>
-                </div>
-                <div>
+                <div id="ryte">
                     <img id="image" />
                 </div>
             </div>
@@ -232,8 +233,15 @@ function getAlpha( data) {
 function App() {
     return (
         <div className="App">
-            <nav className="navbar navbar-dark bg-primary"> 
-                <a className="navbar-brand" href="#">Navbar</a>
+            <nav className="navbar navbar-light bg-warning">
+                <div className="container-fluid">
+                    <a className="navbar-brand"
+                       href="https://github.com/neznajko/Project0"
+                       target="_blank">
+                        <img src={logo} />
+                    </a>
+                    <a className="navbar-brand"><i>BOOM</i></a>
+                </div>
             </nav>
             <div className="Main">
                 <All str=" 
@@ -254,13 +262,12 @@ something more artistic only digits will appear on the right side.
                 </div>
             </div>
             <div className="footer">
-                <p>© 2022 <b><i>WE4ER</i></b>, Inc. All rights reserved.</p>
+                <p>© 2022 <b><i>We4er</i></b>, Inc. All rights reserved.</p>
             </div> 
         </div>
     );
-}
-            
+}            
 export default App;
 ////////////////////////////////////////////////////////////////
-// log:
+// log: 
 ////////////////////////////////////////////////////////////////
