@@ -1,14 +1,91 @@
 :root {
     --dark-gray: hsl( 0, 0%, 20%);
     --light-green: hsl( 120, 70%, 50%);
-}
-body {
-    background-color: #0120f1;
+    --light-blue: #0120f1;
+    --bg1: #501030;
+    --bg2: #000000;
+    --bg3: #3517c0;
+    --fg1: #cfa109;
 }
 canvas {
     background-color: #ffffff;
-    border: 5px dashed var(--light-green);
+    border: 5px solid var(--light-green);
+}
+#Canvas-Street {
+    display: flex;
+}
+.Draw {
+    width: 100%;
+    text-align: center;
+    padding-top: 20px;
+}
+.inner {
+    display: inline-block;
+    margin: 0 auto;
+    padding: 3px;
+}
+button {
+    width: 49%;
+    margin: 1px;
+}
+#image {
+    border: 5px solid #cf1423;
+    image-rendering: pixelated;
+    width: 280px;
+    height: 280px;
+    background-color: #d6d1a0
+}
+body {
+    background-color: var(--bg2);
+    margin-bottom: 80px;
+}
+.BARCHART {
+  display: flex;
+  background-color: var(--bg2);
+  height: 50px;
+  width: 580px;
+  margin: auto;
+}
+.BAR {
+  text-align: center;
+  margin: 1px;
+  font-size: x-large;
+}
+.Main {
+    padding-top: 25px;
+    padding-bottom: 5px;
+    background-color: var(--bg2);
 }
 .App {
-    padding: 1em;
+    color: (--fg1);
+}
+.bg-primary {
+    background-color: #007bff;
+}
+.bg-warning {
+    background-color: rgb( 255, 193, 7);
+}
+.navbar {
+    padding: 0.5rem 1rem;
+}
+.navbar-brand {
+    display: inline-block;
+    padding-top: 0.3125rem;
+    padding-bottom: 0.3125rem;
+    font-size: 1.25rem;
+}
+a {
+    text-decoration: none;
+}
+.navbar-dark a {
+  color: #dfdfdf;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: hsl(240,50%,20%);
+    color: hsl(200,60%,70%);
+    text-align: center;
 }
